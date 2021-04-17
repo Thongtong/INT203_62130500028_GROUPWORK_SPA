@@ -2,7 +2,7 @@
     <header id="header">
   <ul class="nav-ul">
       <li class="nav-li">
-    <router-link to="/">Hotel Booking</router-link>
+      <router-link :to="{ name: 'Booking' }">Hotel Booking</router-link>
       </li>
       <li class="nav-li">
     <router-link to="/">Home</router-link>

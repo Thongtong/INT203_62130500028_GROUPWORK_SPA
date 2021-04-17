@@ -9,14 +9,7 @@ export default {
   components: { NavBar },
   data() {
     return {
-      changeMode: false,
     };
-  },
-  computed: {
-    NavBar
-  },
-  methods: {
-    
   },
 };
 </script>

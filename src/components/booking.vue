@@ -1,33 +1,36 @@
 <template>
-  <h2>Let's get started to make daily !</h2>
-  <form @submit.prevent="addMember">
+  <form @submit.prevent="addBooking">
     <label>name : </label>
     <input type="text" v-model="name" required /> <br />
-    <ui>Number of people : </ui>
+    <labal>Number of people : </labal>
     <input type="number" v-model="Numberofpeople " required /> <br />
+    <label>Telno. : </label>
+    <input type="text" v-model="Telno " required /> <br />
     <label>Date : </label>
     <input type="date" v-model="Date" required /><br />
-    <button>Submit</button>
+    <button value="submit">Submit</button>
   </form>
 </template>
 
 <script>
 export default {
-  name: "Daily",
+  name: "Booking",
   data() {
     return {
-      Title: "",
-      Content: "",
-      Date: "",
-      url: "http://localhost:3000/members",
+      name: "",
+      Numberofpeople: 1,
+      Telno:"",
+      Date: "" ,
+      url: "http://localhost:3000/Customers",
     };
   },
   methods: {
-    async addDaily() {
-      if (this.Title && this.Content && this.Date) {
+    async addBooking() {
+      if (this.name && this.Numberofpeople &&this.Telno && this.Date) {
         let newCustomer = {
           name: this.name,
           Numberofpeople : this.Numberofpeople ,
+          Telno:this.Telno,
           Date: this.Date,
         };
         await fetch(this.url, {
@@ -59,7 +62,7 @@ form button {
   padding: 10px;
   margin-top: 20px;
   border: none;
-  background-color: #e0e00d;
+  background-color: #c9c943;
   color: white;
   cursor: pointer;
 }

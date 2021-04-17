@@ -18,8 +18,8 @@ const routes = [
   },
   {
     path:'/booking',
-    name: 'booking',
-    component: booking 
+    name: 'Booking',
+    component: booking ,
 
   }
 ]
