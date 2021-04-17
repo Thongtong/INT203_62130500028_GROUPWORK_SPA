@@ -3,28 +3,23 @@
     <p>Not Found</p>
   </div>
   <div class="modal" v-else @submit.prevent="">
-    <h2>Edit or Delete</h2>
-    <span class="material-icons" @click="backToHome"> close </span>
     <form>
       <label>Name : </label>
-      <input type="text" v-model="name" required /> <br />
+      <input type="text"
+      class="w-7/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl" 
+       v-model="name" required /> <br />
       <label>Numberofpeople : </label>
-      <input type="number" v-model="Numberofpeople" required /> <br />
+      <input type="number"
+      class="w-6/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl"
+       v-model="Numberofpeople" required /> <br />
       <label>Telno. : </label>
-      <input type="text" v-model="Telno " required /><br />
+      <input type="number" 
+      class="w-5/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl"
+      v-model="Telno " required /><br />
       <label>Date : </label>
       <input type="Date" v-model="date " required /><br />
-      <div class="confirm">
-        <label>Please check this box to confirm you do</label>
-        <input
-          type="checkbox"
-          value="true"
-          v-model="readyToConfirm"
-          required
-        /><br />
-      </div>
       <button class="submit" @click="editBooking">Edit</button>
-      <button class="delete" @click="deleteBooking">Delete</button><br />
+      <button class="delete" @click="deleteBooking">Delete</button>
     </form>
   </div>
 </template>
@@ -36,10 +31,10 @@ export default {
   data() {
     return {
       name: "",
-      email: "",
-      age: "",
-      url: "http://localhost:3000/Customers/" + this.id,
-      readyToConfirm: false,
+      Numberofpeople: "",
+      Telno:"",
+      date: "" ,
+      url: "http://localhost:5000/Customers/" + this.id,
       checkCustomer: [],
     };
   },
@@ -48,12 +43,12 @@ export default {
       this.$router.push("/");
     },
     async editBooking() {
-      if (this.readyToConfirm) {
+       {
         let editBooking = {
           name: this.name,
           Numberofpeople : this.Numberofpeople ,
           Telno:this.Telno,
-          Date: this.Date,
+          Date: this.date,
         };
         await fetch(this.url, {
           method: "PUT",
@@ -64,12 +59,11 @@ export default {
       }
     },
     async deleteBooking() {
-      if (this.readyToConfirm) {
         await fetch(this.url, {
           method: "DELETE",
         });
         this.$router.push("/");
-      }
+      
     },
   },
   async mounted() {
@@ -79,11 +73,22 @@ export default {
     this.name = data.name;
     this.Numberofpeople = data.Numberofpeople;
     this.Telno = data.Telno;
-    this.Date= data.Date;
+    this.Date= data.date;
   },
 };
 </script>
 
 <style scoped>
-
+.submit {
+  background-color: #000000;
+  padding: 10px 15px 10px 15px;
+  margin-right: 10px;
+  color: white;
+}
+.delete {
+  background-color: #000000;
+  padding: 10px 15px 10px 15px;
+  margin-right: 10px;
+  color: white;
+}
 </style>

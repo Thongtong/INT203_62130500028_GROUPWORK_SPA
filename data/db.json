@@ -1,18 +1,32 @@
 {
-    "Customers": [
-      {
-        "name": "jj",
-        "Numberofpeople": "jj is the best",
-        "Telno": "0123456",
-        "Date": "2021-04-01",
-        "id" : 2
-      },
-      {
-        "name": "jj",
-        "Numberofpeople": "jj is the best",
-        "Telno": "0123456",
-        "Date": "2021-04-01",
-        "id" : 3 
-      }
-    ]
-  }
+  "Customers": [
+    {
+      "name": "ธงทอง",
+      "Numberofpeople": 1,
+      "Telno": "144564",
+      "Date": "2021-04-06",
+      "id": 10
+    },
+    {
+      "name": "pppdbdv",
+      "Numberofpeople": 1,
+      "Telno": "454",
+      "Date": "2021-04-30",
+      "id": 11
+    },
+    {
+      "name": "ธงทอง",
+      "Numberofpeople": "35",
+      "Telno": "3",
+      "Date": "2021-04-23",
+      "id": 12
+    },
+    {
+      "name": "dada",
+      "Numberofpeople": "3",
+      "Telno": "13245",
+      "Date": "2021-04-23",
+      "id": 13
+    }
+  ]
+}

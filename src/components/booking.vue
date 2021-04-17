@@ -1,15 +1,24 @@
 <template>
-  <form @submit.prevent="addBooking">
-    <label>name : </label>
-    <input type="text" v-model="name" required /> <br />
-    <labal>Number of people : </labal>
-    <input type="number" v-model="Numberofpeople " required /> <br />
-    <label>Telno. : </label>
-    <input type="text" v-model="Telno " required /> <br />
-    <label>Date : </label>
-    <input type="date" v-model="Date" required /><br />
-    <button value="submit">Submit</button>
-  </form>
+  <!-- <div id="insert"> -->
+    <form @submit.prevent="addBooking">
+      <label>name : </label>
+      <input type="text"
+      placeholder="enter your name"  class="w-7/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl"
+       v-model="name" required /> <br />
+      <labal>Number of people : </labal>
+      <input type="number"
+      placeholder="enter your Number of people"  class="w-6/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl"
+       v-model="Numberofpeople" required /> <br />
+      <label>Telno. : </label>
+      <input type="number" 
+       placeholder="enter your Telno."  class="w-5/12 px-3 py-1 border border-gray-500 focus:border-black focus:outline-none rounded-l-md rounded-r-none text-2xl"
+       v-model="Telno" required /> <br />
+      <label>Date : </label>
+      <input type="date" v-model="date" required /><br />
+      <button class="submit" value="submit">Submit</button>
+      
+    </form>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -18,20 +27,20 @@ export default {
   data() {
     return {
       name: "",
-      Numberofpeople: 1,
-      Telno:"",
-      Date: "" ,
-      url: "http://localhost:3000/Customers",
+      Numberofpeople: "",
+      Telno: "",
+      date: "",
+      url: "http://localhost:5000/Customers",
     };
   },
   methods: {
     async addBooking() {
-      if (this.name && this.Numberofpeople &&this.Telno && this.Date) {
+      if (this.name && this.Numberofpeople && this.Telno) {
         let newCustomer = {
           name: this.name,
-          Numberofpeople : this.Numberofpeople ,
-          Telno:this.Telno,
-          Date: this.Date,
+          Numberofpeople: this.Numberofpeople,
+          Telno: this.Telno,
+          Date: this.date,
         };
         await fetch(this.url, {
           method: "POST",
@@ -46,29 +55,10 @@ export default {
 </script>
 
 <style>
-form {
-  text-align: center;
-  margin: 0 auto 0 auto;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 50px;
-}
-input {
-  padding: 50px;
-  border: 0;
-  border-bottom: 1px solid #ddd;
-  background-color: #f8f9fa;
-}
-form button {
-  padding: 10px;
-  margin-top: 20px;
-  border: none;
-  background-color: #c9c943;
+.submit {
+  background-color: #000000;
+  padding: 10px 20px 10px 15px;
+  margin-right: 10px;
   color: white;
-  cursor: pointer;
-}
-h2 {
-  color: rgb(51, 28, 20);
-  text-shadow: 1px 1px 0px rgb(0, 0, 0);
-  font-size: 50px;
 }
 </style>

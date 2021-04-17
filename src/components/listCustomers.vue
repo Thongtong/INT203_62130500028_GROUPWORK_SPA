@@ -1,5 +1,6 @@
 <template>
- <table  >
+
+ <table>   
  <tr>
       <th>Name</th>
       <th>Numberofpeople</th>
@@ -12,6 +13,7 @@
     <td>{{ customer.Telno }}</td>
     <td>{{ customer.Date }}</td>
   </tr>
+  
  </table>
 </template>
 
@@ -21,8 +23,7 @@ export default {
   props: ["customer"],
   methods: {
     emitTableRow() {
-      this.$router.push({ name: "ReBooking", params: { id: customer.id } });
-  
+      this.$router.push({ name: "ReBooking", params: { id: this.customer.id } });
     },
   }
 };

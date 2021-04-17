@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import booking from '../components/booking.vue'
+import Booking from '../components/Booking.vue'
 import Home from '../views/Home.vue'
+import ReBooking from '../components/ReBooking.vue'
 
 const routes = [
   {
@@ -19,8 +20,13 @@ const routes = [
   {
     path:'/booking',
     name: 'Booking',
-    component: booking ,
-
+    component: Booking ,
+  },
+  {
+    path:'/rebooking/:id',
+    name : 'ReBooking',
+    component : ReBooking,
+    props : true
   }
 ]
 
