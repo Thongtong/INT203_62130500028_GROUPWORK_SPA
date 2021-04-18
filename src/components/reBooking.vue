@@ -91,4 +91,10 @@ export default {
   margin-right: 10px;
   color: white;
 }
+.submit:hover {
+   @apply bg-yellow-400 ; 
+}
+.delete:hover {
+   @apply bg-red-700 ; 
+}
 </style>
