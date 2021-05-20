@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ListCustomers from "../components/ListCustomers.vue";
+import ListCustomers from "../components/listCustomers.vue";
 export default {
   name: "Home",
   components: {
