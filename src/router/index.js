@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Booking from '../components/Booking.vue'
+import Booking from '../components/booking.vue'
 import Home from '../views/Home.vue'
-import ReBooking from '../components/ReBooking.vue'
+import ReBooking from '../components/reBooking.vue'
 
 const routes = [
   {
